@@ -34,3 +34,4 @@ make clean
 --with-zlib
 make -j
 make install
+cp php.ini-* /usr/local/php/8.0/etc/
