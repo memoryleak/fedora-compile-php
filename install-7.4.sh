@@ -46,6 +46,6 @@ make clean
 make clean
 make -j
 sudo make install
-cp php.ini-* /usr/local/etc/php/7.4/
-cp sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm74.service
-cp sapi/fpm/php-fpm.conf /usr/local/etc/php/7.4/php-fpm.conf
+cp sudo php.ini-* /usr/local/etc/php/7.4/
+cp sudo sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm74.service
+cp sudo sapi/fpm/php-fpm.conf /usr/local/etc/php/7.4/php-fpm.conf
