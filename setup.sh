@@ -14,23 +14,25 @@ curl -s https://www.php.net/distributions/php-$PHP_74_VERSION.tar.xz -o php-$PHP
 echo "Downloading $PHP_80_VERSION..."
 curl -s https://www.php.net/distributions/php-$PHP_80_VERSION.tar.xz -o php-$PHP_80_VERSION.tar.xz
 
+mkdir -p src
+
 echo "Extracting $PHP_73_VERSION..."
-tar -xf php-$PHP_73_VERSION.tar.xz
+tar -xf php-$PHP_73_VERSION.tar.xz -C src/ && rm php-$PHP_73_VERSION.tar.xz
 echo "Extracting $PHP_74_VERSION..."
-tar -xf php-$PHP_74_VERSION.tar.xz
+tar -xf php-$PHP_74_VERSION.tar.xz -C src/ && rm php-$PHP_74_VERSION.tar.xz
 echo "Extracting $PHP_80_VERSION..."
-tar -xf php-$PHP_80_VERSION.tar.xz
+tar -xf php-$PHP_80_VERSION.tar.xz -C src/ && rm php-$PHP_80_VERSION.tar.xz
 
 echo "Installing dependencies (using sudo)..."
 sudo ./install-deps.sh
 
 echo "Installing $PHP_73_VERSION..."
-(cd "$PHP_73_VERSION" && ./../install-7.3.sh)
+(cd "src/php-$PHP_73_VERSION" && ./../../install-7.3.sh)
 
 echo "Installing $PHP_74_VERSION..."
-(cd "$PHP_74_VERSION" && ./../install-7.4.sh)
+(cd "src/php-$PHP_74_VERSION" && ./../../install-7.4.sh)
 
 echo "Installing $PHP_80_VERSION..."
-(cd "$PHP_80_VERSION" && ./../install-8.0.sh)
+(cd "src/php-$PHP_80_VERSION" && ./../../install-8.0.sh)
 
-./switch-php-version 7.3
+./switch-php-version.sh 7.3
