@@ -50,4 +50,3 @@ make -j
 sudo make install
 sudo cp php.ini-* /usr/local/etc/php/7.3/
 sudo cp sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm73.service
-sudo cp sapi/fpm/php-fpm.conf /usr/local/etc/php/7.3/php-fpm.conf

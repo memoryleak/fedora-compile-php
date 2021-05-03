@@ -47,4 +47,3 @@ make -j
 sudo make install
 sudo cp php.ini-* /usr/local/etc/php/8.0/
 sudo cp sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm80.service
-sudo cp sapi/fpm/php-fpm.conf /usr/local/etc/php/8.0/php-fpm.conf
