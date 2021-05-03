@@ -1,7 +1,36 @@
 #!/bin/bash
-curl https://www.php.net/distributions/php-7.3.28.tar.xz -o php-7.3.xz
-curl https://www.php.net/distributions/php-7.4.18.tar.xz -o php-7.4.xz
-curl https://www.php.net/distributions/php-8.0.5.tar.xz -o php-8.0.tar.xz
-tar -xf php-7.3.xz
-tar -xf php-7.4.xz
-tar -xf php-8.0.tar.xz
+PHP_73_VERSION="7.3.28"
+PHP_74_VERSION="7.4.18"
+PHP_80_VERSION="8.0.5"
+
+rm -rf php-$PHP_73_VERSION.tar.xz php-$PHP_73_VERSION
+rm -rf php-$PHP_74_VERSION.tar.xz php-$PHP_74_VERSION
+rm -rf php-$PHP_80_VERSION.tar.xz php-$PHP_80_VERSION
+
+echo "Downloading $PHP_73_VERSION..."
+curl -s https://www.php.net/distributions/php-$PHP_73_VERSION.tar.xz -o php-$PHP_73_VERSION.tar.xz
+echo "Downloading $PHP_74_VERSION..."
+curl -s https://www.php.net/distributions/php-$PHP_74_VERSION.tar.xz -o php-$PHP_74_VERSION.tar.xz
+echo "Downloading $PHP_80_VERSION..."
+curl -s https://www.php.net/distributions/php-$PHP_80_VERSION.tar.xz -o php-$PHP_80_VERSION.tar.xz
+
+echo "Extracting $PHP_73_VERSION..."
+tar -xf php-$PHP_73_VERSION.tar.xz
+echo "Extracting $PHP_74_VERSION..."
+tar -xf php-$PHP_74_VERSION.tar.xz
+echo "Extracting $PHP_80_VERSION..."
+tar -xf php-$PHP_80_VERSION.tar.xz
+
+echo "Installing dependencies (using sudo)..."
+sudo ./install-deps.sh
+
+echo "Installing $PHP_73_VERSION..."
+(cd "$PHP_73_VERSION" && ./../install-7.3.sh)
+
+echo "Installing $PHP_74_VERSION..."
+(cd "$PHP_74_VERSION" && ./../install-7.4.sh)
+
+echo "Installing $PHP_80_VERSION..."
+(cd "$PHP_80_VERSION" && ./../install-8.0.sh)
+
+./switch-php-version 7.3

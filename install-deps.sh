@@ -1,5 +1,6 @@
 #!/bin/bash
-dnf update -y && dnf groupinstall -y c-development && dnf install -y \
+dnf groupinstall -y c-development
+dnf install -y \
 	systemd-devel \
 	libxml2-devel \
 	openssl-devel \
