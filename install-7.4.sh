@@ -43,6 +43,9 @@ make clean
 --with-xmlrpc \
 --with-xsl \
 --with-zlib
+make clean
 make -j
-make install
-cp php.ini-* /usr/local/php/7.4/etc/
+sudo make install
+cp php.ini-* /usr/local/etc/php/7.4/
+cp sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm74.service
+cp sapi/fpm/php-fpm.conf /usr/local/etc/php/7.4/php-fpm.conf

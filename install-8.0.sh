@@ -42,6 +42,9 @@ make clean
 --with-sodium \
 --with-xsl \
 --with-zlib
+make clean
 make -j
-make install
-cp php.ini-* /usr/local/php/8.0/etc/
+sudo make install
+cp php.ini-* /usr/local/etc/php/8.0/
+cp sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm80.service
+cp sapi/fpm/php-fpm.conf /usr/local/etc/php/8.0/php-fpm.conf
