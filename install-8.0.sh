@@ -11,6 +11,8 @@ make clean
 --libdir=/usr/local/lib/php/8.0 \
 --includedir=/usr/local/include/php/8.0 \
 --datarootdir=/usr/local/share/php/8.0 \
+--with-config-file-path=/usr/local/etc/php/8.0/php.ini \
+--with-config-file-scan-dir=/usr/local/etc/php/8.0/conf.d \
 --program-suffix=80 \
 --enable-bcmath \
 --enable-calendar \

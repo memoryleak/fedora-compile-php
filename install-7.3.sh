@@ -10,6 +10,8 @@
 --libdir=/usr/local/lib/php/7.3 \
 --includedir=/usr/local/include/php/7.3 \
 --datarootdir=/usr/local/share/php/7.3 \
+--with-config-file-path=/usr/local/etc/php/7.3/php.ini \
+--with-config-file-scan-dir=/usr/local/etc/php/7.3/conf.d \
 --program-suffix=73 \
 --enable-bcmath \
 --enable-calendar \

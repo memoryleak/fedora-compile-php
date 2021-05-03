@@ -35,4 +35,5 @@ echo "Installing $PHP_74_VERSION..."
 echo "Installing $PHP_80_VERSION..."
 (cd "src/php-$PHP_80_VERSION" && ./../../install-8.0.sh)
 
-./switch-php-version.sh 7.3
+echo "Install PHP version switcher (switch-php-version)..."
+mkdir -p "$HOME/.local/bin" && cp switch-php-version.sh "$HOME/.local/bin/switch-php-version"

@@ -11,6 +11,8 @@ make clean
 --libdir=/usr/local/lib/php/7.4 \
 --includedir=/usr/local/include/php/7.4 \
 --datarootdir=/usr/local/share/php/7.4 \
+--with-config-file-path=/usr/local/etc/php/7.4/php.ini \
+--with-config-file-scan-dir=/usr/local/etc/php/7.4/conf.d \
 --program-suffix=74 \
 --enable-bcmath \
 --enable-calendar \
