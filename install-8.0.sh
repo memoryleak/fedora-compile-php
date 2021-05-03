@@ -2,6 +2,16 @@
 make clean
 ./configure \
 --prefix=/usr/local/php/8.0 \
+--bindir=/usr/local/bin \
+--sbindir=/usr/local/sbin \
+--libexecdir=/usr/local/libexec/php/8.0 \
+--sysconfdir=/usr/local/etc/php/8.0 \
+--sharedstatedir=/usr/local/com/php/8.0 \
+--localstatedir=/usr/local/var/php/8.0 \
+--libdir=/usr/local/lib/php/8.0 \
+--includedir=/usr/local/include/php/8.0 \
+--datarootdir=/usr/local/share/php/8.0 \
+--program-suffix=80 \
 --enable-bcmath \
 --enable-calendar \
 --enable-exif \
