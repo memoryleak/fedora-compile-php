@@ -3,9 +3,8 @@ PHP_73_VERSION="7.3.28"
 PHP_74_VERSION="7.4.18"
 PHP_80_VERSION="8.0.5"
 
-rm -rf php-$PHP_73_VERSION.tar.xz php-$PHP_73_VERSION
-rm -rf php-$PHP_74_VERSION.tar.xz php-$PHP_74_VERSION
-rm -rf php-$PHP_80_VERSION.tar.xz php-$PHP_80_VERSION
+echo "Clean up existing files..."
+rm -rf src/ && mkdir -p src
 
 echo "Downloading $PHP_73_VERSION..."
 curl -s https://www.php.net/distributions/php-$PHP_73_VERSION.tar.xz -o php-$PHP_73_VERSION.tar.xz
@@ -13,8 +12,6 @@ echo "Downloading $PHP_74_VERSION..."
 curl -s https://www.php.net/distributions/php-$PHP_74_VERSION.tar.xz -o php-$PHP_74_VERSION.tar.xz
 echo "Downloading $PHP_80_VERSION..."
 curl -s https://www.php.net/distributions/php-$PHP_80_VERSION.tar.xz -o php-$PHP_80_VERSION.tar.xz
-
-mkdir -p src
 
 echo "Extracting $PHP_73_VERSION..."
 tar -xf php-$PHP_73_VERSION.tar.xz -C src/ && rm php-$PHP_73_VERSION.tar.xz
