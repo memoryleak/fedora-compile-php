@@ -1,10 +1,9 @@
 #!/bin/bash
 ./configure \
 --prefix=/usr/local/php/7.3 \
+--bindir=/usr/local/bin \
+--sbindir=/usr/local/sbin \
 --sysconfdir=/etc/php/7.3 \
---include-dir=/usr/local/include/php/7.3 \
---localstatedir=/usr/local/var/php/7.3 \
---runstatedir=/usr/local/var/php/7.3 \
 --program-suffix=73 \
 --enable-bcmath \
 --enable-calendar \
@@ -42,4 +41,4 @@
 --with-zlib
 make clean
 make -j
-make install
+sudo make install
