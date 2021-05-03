@@ -3,7 +3,13 @@
 --prefix=/usr/local/php/7.3 \
 --bindir=/usr/local/bin \
 --sbindir=/usr/local/sbin \
---sysconfdir=/etc/php/7.3 \
+--libexecdir/usr/local/libexec/php/7.3 \
+--sysconfdir/usr/local/etc/php/7.3 \
+--sharedstatedir/usr/local/com/php/7.3 \
+--localstatedir/usr/local/var/php/7.3 \
+--libdir=/usr/local/lib/php/7.3 \
+--includedir/usr/local/include/php/7.3 \
+--datarootdir/usr/local/share/php/7.3
 --program-suffix=73 \
 --enable-bcmath \
 --enable-calendar \
