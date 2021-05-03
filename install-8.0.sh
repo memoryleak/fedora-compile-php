@@ -45,6 +45,6 @@ make clean
 make clean
 make -j
 sudo make install
-cp sudo php.ini-* /usr/local/etc/php/8.0/
-cp sudo sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm80.service
-cp sudo sapi/fpm/php-fpm.conf /usr/local/etc/php/8.0/php-fpm.conf
+sudo cp php.ini-* /usr/local/etc/php/8.0/
+sudo cp sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm80.service
+sudo cp sapi/fpm/php-fpm.conf /usr/local/etc/php/8.0/php-fpm.conf
