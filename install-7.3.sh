@@ -51,4 +51,10 @@ make clean
 make -j
 sudo make install
 sudo cp php.ini-* /usr/local/etc/php/7.3/
+sudo cp php.ini-development /usr/local/etc/php/7.3/php.ini
+sed -i sapi/fpm/www.conf -e 's/127.0.0.1:9000/\/usr\/local\/var\/php\/7.3\/run\/php-fpm73.sock/g'
+sudo cp sapi/fpm/www.conf /usr/local/etc/php/7.3/php-fpm.d/
+sed -i sapi/fpm/php-fpm.service -e 's/php-fpm /php-fpm73 /g'
+sed -i sapi/fpm/php-fpm.service -e 's/ProtectSystem=full/ProtectSystem=false/g'
 sudo cp sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm73.service
+sudo chown -R php:php /usr/local/var/php 
