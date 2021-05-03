@@ -1,7 +1,11 @@
 #!/bin/bash
-make clean
 ./configure \
 --prefix=/usr/local/php/7.3 \
+--sysconfdir=/etc/php/7.3 \
+--include-dir=/usr/local/include/php/7.3 \
+--localstatedir=/usr/local/var/php/7.3 \
+--runstatedir=/usr/local/var/php/7.3 \
+--program-suffix=73 \
 --enable-bcmath \
 --enable-calendar \
 --enable-exif \
@@ -36,6 +40,6 @@ make clean
 --with-xmlrpc \
 --with-xsl \
 --with-zlib
+make clean
 make -j
 make install
-cp php.ini-* /usr/local/php/7.3/etc/
