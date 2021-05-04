@@ -39,8 +39,6 @@ PHP_SUFFIX="74"
 --with-freetype \
 --with-gettext \
 --with-gmp \
---with-imap \
---with-imap-ssl \
 --with-jpeg \
 --with-libedit \
 --with-mhash \
