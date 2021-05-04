@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 dnf groupinstall -y c-development
 dnf install -y \
 	systemd-devel \
@@ -19,4 +19,5 @@ dnf install -y \
 	libxslt-devel \
 	krb5-devel \
 	sqlite-devel \
-	oniguruma-devel
+	oniguruma-devel \
+	re2c
