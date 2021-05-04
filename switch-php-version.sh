@@ -28,21 +28,5 @@ for PHP_SCRIPT in $PHP_SCRIPTS; do
 	ln -fsT "/usr/local/bin/$PHP_SCRIPT${PHP_SUFFIX}" "$HOME/.local/bin/$PHP_SCRIPT"
 done
 
-ln -fsT "/usr/local/bin/phar73.phar" "$HOME/.local/bin/phar"
+ln -fsT "/usr/local/bin/phar$PHP_SUFFIX.phar" "$HOME/.local/bin/phar"
 ls -las "$HOME/.local/bin/"
-
-echo "Install xdebug..."
-
-sudo php73 /usr/local/php/7.3/lib/php/peclcmd.php channel-update pecl.php.net
-sudo php74 /usr/local/php/7.4/lib/php/peclcmd.php channel-update pecl.php.net
-sudo php80 /usr/local/php/8.0/lib/php/peclcmd.php channel-update pecl.php.net
-sudo php73 /usr/local/php/7.3/lib/php/peclcmd.php install xdebug
-sudo php74 /usr/local/php/7.4/lib/php/peclcmd.php install xdebug
-sudo php80 /usr/local/php/8.0/lib/php/peclcmd.php install xdebug
-
-sudo cp /mnt/netinstall/files/work/php/php73/php.d/15-xdebug.ini /usr/local/php/7.3/etc/conf.d
-sudo cp /mnt/netinstall/files/work/php/php73/php.d/10-opcache.ini /usr/local/php/7.3/etc/conf.d
-sudo cp /mnt/netinstall/files/work/php/php73/php.d/15-xdebug.ini /usr/local/php/7.4/etc/conf.d
-sudo cp /mnt/netinstall/files/work/php/php73/php.d/10-opcache.ini /usr/local/php/7.4/etc/conf.d
-sudo cp /mnt/netinstall/files/work/php/php73/php.d/15-xdebug.ini /usr/local/php/8.0/etc/conf.d
-sudo cp /mnt/netinstall/files/work/php/php73/php.d/10-opcache.ini /usr/local/php/8.0/etc/conf.d
