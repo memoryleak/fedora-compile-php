@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 PHP_VERSION="8.0"
 PHP_SUFFIX="80"
-
+#--with-tsrm-pth, --with-tsrm-pthreads, --with-tsrm-st, --with-xmlrpc
 ./configure \
 --prefix=/usr/local/php/$PHP_VERSION \
 --exec-prefix=/usr/local/php/$PHP_VERSION \
@@ -11,29 +11,40 @@ PHP_SUFFIX="80"
 --with-config-file-scan-dir="/usr/local/php/$PHP_VERSION/etc/conf.d" \
 --program-suffix=$PHP_SUFFIX \
 --with-fpm-group=php-fpm \
---with-fpm-user=php-fpm \
 --with-fpm-systemd \
+--with-fpm-user=php-fpm \
 --disable-cgi \
 --enable-bcmath \
 --enable-calendar \
 --enable-exif \
 --enable-fpm \
+--enable-ftp \
+--enable-gd \
 --enable-intl \
 --enable-mbstring \
 --enable-mysqlnd \
 --enable-pcntl \
+--enable-phpdbg \
+--enable-phpdbg-readline \
+--enable-phpdbg-webhelper \
+--enable-shmop \
 --enable-soap \
 --enable-sockets \
+--enable-sysvmsg \
+--enable-sysvsem \
+--enable-sysvshm \
 --with-bz2 \
 --with-curl \
 --with-enchant \
---with-fpm-group=php-fpm \
---with-fpm-systemd \
---with-fpm-user=php-fpm \
+--with-freetype \
 --with-gettext \
 --with-gmp \
---with-kerberos \
+--with-imap \
+--with-imap-ssl \
+--with-jpeg \
+--with-libedit \
 --with-mhash \
+--with-mm \
 --with-mysqli \
 --with-openssl \
 --with-pdo-mysql \
@@ -41,8 +52,12 @@ PHP_SUFFIX="80"
 --with-pear \
 --with-pgsql \
 --with-readline \
+--with-snmp \
 --with-sodium \
+--with-webp \
+--with-xpm \
 --with-xsl \
+--with-zip \
 --with-zlib
 
 make clean

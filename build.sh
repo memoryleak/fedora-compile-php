@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 PHP_VERSIONS="7.3.28 7.4.18 8.0.5"
+#PHP_VERSIONS="7.4.18 8.0.5"
+
 
 echo "Clean up existing files..."
 
@@ -14,7 +16,7 @@ for PHP_VERSION in $PHP_VERSIONS; do
 	curl -s https://www.php.net/distributions/php-$PHP_VERSION.tar.xz -o php-$PHP_VERSION.tar.xz
 	tar -xf php-$PHP_VERSION.tar.xz -C src/ && rm php-$PHP_VERSION.tar.xz
 	echo "Installing $PHP_VERSION..."
-	(cd "src/php-$PHP_VERSION" && ./../../install-$PHP_VERSION_SHORT.sh)
+	(cd "src/php-$PHP_VERSION" && ./../../install-$PHP_VERSION_SHORT.sh) > "$PHP_VERSION.log"
 
 done
 

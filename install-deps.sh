@@ -20,4 +20,11 @@ dnf install -y \
 	krb5-devel \
 	sqlite-devel \
 	oniguruma-devel \
+	libzip-devel \
+	libXpm-devel \
+	freetype-devel \
+	enchant2-devel \
+	openldap-devel \
+	libedit-devel \
+	mm-devel \
 	re2c
